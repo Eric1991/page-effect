@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .fdj {
+            position: relative;
+            margin-left: 150px;
+            margin-top:100px;
+            width: 350px;
+            height: 350px;
+            /*border: 1px solid red;*/
+        }
+
+        .small {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #E5E5E5;
+            position: relative;
+
+        }
+
+        .big {
+            width: 450px;
+            height: 450px;
+            border: 1px solid #E5E5E5;
+            position: absolute;
+            overflow: hidden;
+            left: 360px;
+            top:0px;
+            display: none;
+        }
+
+        .mask {
+            background-color: rgba(255,255,0,0.4);
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top:0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        .big img {
+            position: absolute;
+            top : 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="fdj">
+        <div class="small" style="height: 352px">
+            <img src="images/001.jpg">
+            <div class="mask"></div>
+        </div>
+        <div class="big">
+            <img src="images/0001.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+<script>
+
+    var fdj = document.getElementsByClassName("fdj")[0];
+    var small = document.getElementsByClassName("small")[0];
+    var big = document.getElementsByClassName("big")[0];
+    var mask = document.getElementsByClassName("mask")[0];
+
+    small.onmouseover = function() {
+        big.style.display = 'block';
+        mask.style.display = 'block';
+    }
+
+    small.onmouseout = function() {
+        big.style.display = 'none';
+        mask.style.display = 'none';
+    }
+
+    small.onmousemove = function(event) {
+
+        var event = event || window.event;
+        var clientX = event.clientX;
+        var clientY = event.clientY;
+
+
+        if(clientX - fdj.offsetLeft  - mask.offsetWidth / 2  < 0) {
+            targetX = 0;
+        } else if(clientX - fdj.offsetLeft - small.offsetWidth + mask.offsetWidth / 2 > 0) {
+            targetX = clientX - fdj.offsetLeft - mask.offsetWidth;
+            console.log("targetX..AA." + targetX);
+        } else {
+            targetX = clientX - fdj.offsetLeft - mask.offsetWidth / 2 ;
+        }
+
+
+        if(clientY - fdj.offsetTop - mask.offsetHeight / 2 < 0) {
+            targetY = 0;
+        } else if(clientY - fdj.offsetTop - small.offsetHeight + mask.offsetHeight  > 0) {
+            targetY = clientY - fdj.offsetTop - mask.offsetHeight ;
+        } else {
+            targetY = clientY - fdj.offsetTop - mask.offsetHeight / 2;
+        }
+
+
+
+        big.children[0].style.left = -targetX * big.offsetWidth / small.offsetWidth + "px";
+        big.children[0].style.top = -targetY * big.offsetHeight / small.offsetHeight + "px";
+
+    }
+
+
+
+
+    var leaderX=0,
+            leaderY=0,
+            targetX=0,
+            targetY=0;
+
+
+    setInterval(function(){
+
+        leaderX = leaderX + (targetX - leaderX) / 10;
+        leaderY = leaderY + (targetY - leaderY) / 10;
+
+        mask.style.left = leaderX + 'px';
+        mask.style.top = leaderY + 'px';
+
+    },10);
+
+
+</script>
+</html>

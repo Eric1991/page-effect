@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直滚动条</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 500px;
+            border: 2px solid #E5E5E5;
+            margin-top: 100px;
+            margin-left: 100px;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+        .content {
+            height: auto;
+            padding : 5px 20px 5px 5px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+
+        .scroll {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #888888;
+            width: 15px;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .bar {
+            position: absolute;
+            right: 0;
+            top: 1px;
+            height: 40px;
+            width: 15px;
+            background-color: darkgreen;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="box">
+        <div class="content">
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+            内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+        </div>
+        <div class="scroll">
+            <div class="bar">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var box  = document.getElementsByClassName("box")[0];
+        var content = document.getElementsByClassName("content")[0];
+        var scroll = document.getElementsByClassName("scroll")[0];
+        var bar = document.getElementsByClassName("bar")[0];
+
+
+        //计算滚动条高度
+        var scrollHeight = box.offsetHeight / content.offsetHeight * box.offsetHeight;
+
+        bar.style.height = scrollHeight + "px";
+
+        startScroll(bar,content);
+
+
+        function startScroll(bar,content) {
+
+            bar.onmousedown = function(event){
+                var event = event || window.event;
+
+                var t = event.clientY - bar.offsetTop;
+
+                document.onmousemove = function(event){
+                     var event = event || window.event;
+                     var movePoistion = event.clientY - t;
+
+                    //var moveContentMultipe = -3.1;
+                    var moveContentMultipe = ((content.offsetHeight - box.offsetHeight) / (scrollHeight - box.offsetHeight)).toFixed(2);
+                    moveContentMultipe = moveContentMultipe - 0.05;
+
+                     if(movePoistion < 0) {
+                         movePoistion = 0;
+                     } else if(movePoistion > scroll.offsetHeight - scrollHeight) {
+                         movePoistion = scroll.offsetHeight - scrollHeight;
+                     }
+
+                     bar.style.top  = movePoistion + "px";
+                    content.style.top = movePoistion * moveContentMultipe + "px";
+
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                }
+
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                }
+
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+

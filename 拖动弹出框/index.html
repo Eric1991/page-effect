@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动弹出框</title>
+    <style>
+        .dialog {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #E5E5E5;
+            box-shadow: 2px 2px 10px #888888;
+            position: absolute;
+            top : 0;
+            left: 0;
+        }
+
+        .header {
+            height: 30px;
+            border-bottom: 1px solid #E5E5E5;
+            line-height: 30px;
+            padding-left: 15px;
+            color: #ffffff;
+            background-color: gray;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <div class="header">标题</div>
+        <div class="body"></div>
+    </div>
+</body>
+<script>
+    var dialog = document.getElementsByClassName("dialog")[0];
+    var header = document.getElementsByClassName("header")[0];
+
+
+    header.onmousedown = function(event) {
+        var event = event || window.event;
+
+        var x = event.clientX - dialog.offsetLeft;
+        var y = event.clientY - dialog.offsetTop;
+        console.log("eventX..." + event.clientX);
+        console.log("eventY..." + event.clientY);
+        console.log("dialog.offsetLeft..." + dialog.offsetLeft);
+        console.log("dialog.offsetTop..." + dialog.offsetTop);
+
+        document.onmousemove = function(event) {
+            var event = event || window.event;
+
+            console.log("move_clientX..." + event.clientX);
+            console.log("move_clientY..." + event.clientY);
+
+            var clientX = event.clientX - x;
+            var clientY = event.clientY - y;
+
+//            console.log("clientX..." + clientX);
+//            console.log("clientY..." + clientY);
+
+            dialog.style.left = clientX  + "px";
+            dialog.style.top = clientY + "px";
+
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        }
+    }
+
+
+
+</script>
+</html>

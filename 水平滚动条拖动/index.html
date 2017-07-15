@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平滚动条拖动</title>
+    <style>
+        .scroll {
+            margin-left : 100px;
+            margin-top: 200px;
+            height: 8px;
+            border: 1px solid gray;
+            width: 400px;
+            position: relative;
+        }
+
+        .bar {
+            width: 14px;
+            height: 22px;
+            position: absolute;
+            background-color: cadetblue;
+            top : -6px;
+            left: -1px;
+        }
+
+        .mask {
+            height: 100%;
+            background-color: cadetblue;
+            width: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="result1">
+
+    </div>
+    <div id="result2">
+
+    </div>
+    <div class="scroll">
+        <div class="bar"></div>
+        <div class="mask"></div>
+    </div>
+</body>
+<script>
+
+    var scroll = document.getElementsByClassName("scroll")[0];
+    var bar = document.getElementsByClassName("bar")[0];
+    var mask  = document.getElementsByClassName("mask")[0];
+    var result1 = document.getElementById("result1");
+    var result2 = document.getElementById("result2");
+
+    bar.onmousedown = function(event) {
+
+        var event = event || window.event;
+
+        var leftVal = event.clientX - this.offsetLeft;
+
+        var that = this;
+
+        document.onmousemove = function(event) {
+
+            var movePosition = event.clientX - leftVal;
+
+
+            if(parseInt(movePosition) < 0 ) {
+                that.style.left = '0';
+            } else if(parseInt(movePosition) > 400) {
+
+            } else{
+                that.style.left = movePosition + "px";
+            }
+
+            mask.style.width = that.style.left;
+
+            result1.innerHTML = "移动了" + mask.style.width  + "距离";
+            result2.innerHTML = "移动了" + (parseInt(mask.style.width) / 400 * 100) + "%";
+
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        }
+
+    }
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+

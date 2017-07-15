@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算div内的坐标</title>
+    <style>
+        #content {
+            width:400px;
+            height: 400px;
+            background-color: pink;
+            margin-top:100px;
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    var content = document.getElementById("content");
+
+    content.onmousemove = function(event) {
+        var event = event || window.event;
+
+        var x = event.clientX - content.offsetLeft;
+        var y = event.clientY - content.offsetTop;
+
+        content.innerHTML = "x:" + x + "px, " + "y:" + y + "px";
+
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跟斗云</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .cloud {
+            background: url(images/cloud.gif) no-repeat;
+            position: absolute;
+            width: 83px;
+            height: 42px;
+            top:0;
+            left:0;
+        }
+
+        .nav {
+            position: relative;
+            width: 800px;
+            height: 42px;
+            margin: 100px auto;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 42px;
+            background: url(images/rss.png) no-repeat center right #fff;
+        }
+
+        .nav ul {
+            position: absolute;
+        }
+
+        .nav li {
+            float:left;
+            width: 83px;
+            height: 42px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <span class="cloud" id="cloud"></span>
+        <ul id="navMemu">
+            <li>首页新闻</li>
+            <li>师资力量</li>
+            <li>活动策划</li>
+            <li>企业文化</li>
+            <li>招聘信息</li>
+            <li>公司简介</li>
+            <li>上海校区</li>
+            <li>广州校区</li>
+        </ul>
+    </div>
+</body>
+<script>
+
+      var cloud = document.getElementById("cloud");
+
+      //document.getElementById("navMemu").childElementCount;
+
+      var lis = document.getElementById("navMemu").children;
+
+      var current = 0;
+
+      for(var i=0; i<lis.length; i++) {
+          lis[i].onmouseover = function() {
+              target = this.offsetLeft;
+          }
+
+          lis[i].onmouseout = function() {
+              target = current;
+          }
+
+          lis[i].onclick = function() {
+              current = this.offsetLeft;
+          }
+      }
+
+      var leader=0, target=0;
+
+      setInterval(function(){
+            leader = leader  + (target - leader) / 10;
+            cloud.style.left = leader + "px";
+      },10);
+</script>
+</html>
