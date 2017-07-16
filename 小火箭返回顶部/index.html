@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小火箭返回顶部</title>
+    <style>
+        .top {
+            position: fixed;
+            bottom : 40px;
+            right: 50px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+    <script src="my.js"></script>
+    <script>
+        function show(obj) {
+            obj.style.display = 'block';
+        }
+        function hide(obj) {
+            obj.style.display = 'none';
+        }
+        window.onload = function() {
+            var goToTop = document.getElementById("gotop");
+            //hide(goToTop);
+
+            var leader = 0, target = 0, timer;
+            window.onscroll = function() {
+
+                var scrollTop = getScrollPostion().top;
+                scrollTop > 400 ? show(goToTop) : hide(goToTop);
+                leader = scrollTop;
+                goToTop.onclick = function() {
+                    //alert("11");
+                    clearInterval(timer);
+                    target = 0;
+                    timer = setInterval(function(){
+                        leader = leader + (target - leader) / 10;
+                        console.log("leader.." + leader);
+                        window.scrollTo(0,leader);
+                        if(leader == 0) {
+                            clearInterval(timer);
+                            console.log("clear timer interval");
+                        }
+                    },20);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="gotop" class="top">
+        <img src="images/Top.jpg" alt=""/>
+    </div>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+    <p>内容,我是内容</p>
+</body>
+</html>
