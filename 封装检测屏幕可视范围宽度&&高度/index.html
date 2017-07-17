@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装检测屏幕可视范围宽度&&高度</title>
+    <script src="myClientWidth.js"></script>
+</head>
+<body>
+
+<script>
+
+    function resizeFun() {
+        console.log("clientWidth" + getClientSize().width);
+        console.log("clientHeight" + getClientSize().height);
+    }
+
+    resizeFun();
+
+    window.onload = function() {
+        window.onresize = function() {
+            resizeFun();
+        }
+    }
+</script>
+</body>
+</html>

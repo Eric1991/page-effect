@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取消冒泡兼容各浏览器</title>
+</head>
+<body>
+    <button id="btn">点击按钮</button>
+</body>
+<script>
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function(event) {
+
+        var event = event || window.event;
+        if(event && event.stopPropagation) {
+            event.stopPropagation();   //标准浏览器
+        } else {
+            event.cancelable = true;   //ie 678
+        }
+
+        alert("点击按钮");
+    }
+
+    document.onclick = function(event) {
+        alert("点击document");
+    }
+
+
+</script>
+</html>
