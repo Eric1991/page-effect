@@ -50,16 +50,18 @@
 
         if(text) {   // 所有的字符串都为真  "" 是假    所有的数字为真  0  为假
             showBox(event.clientX, event.clientY, text);
+            document.onmousedown = function(event) {
+                var event = event || window.event;
+                var targetId = event.target ? event.target.id : event.srcElement.id;
+                if(targetId != "tip") {
+                    hideBox();
+                }
+                document.onmousedown = null;
+            }
         }
     }
 
-    document.onmousedown = function(event) {
-        var event = event || window.event;
-        var targetId = event.target ? event.target.id : event.srcElement.id;
-        if(targetId != "tip") {
-            hideBox();
-        }
-    }
+
 
     function showBox(mX, mY, text) {
         setTimeout(function(){
