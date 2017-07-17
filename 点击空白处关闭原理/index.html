@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击空白处关闭</title>
+    <style>
+        body {
+            height: 2000px;
+            /*overflow: hidden;*/
+        }
+
+        #mask {
+            width: 100%;
+            height: 100%;
+            background-color: #888888;
+            opacity: 0.4;
+            position: fixed;
+            top:0;
+            left: 0;
+            display: none;
+        }
+
+        #dialog {
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin: -200px 0 0 -200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="show">登录</button>
+
+    <div id="mask"></div>
+    <div id="dialog"></div>
+</body>
+<script>
+    function $(id) {return document.getElementById(id);}
+
+    var mask = $("mask");
+    var dialog = $("dialog");
+    var showBtn = $("show");
+
+    showBtn.onclick = function(event) {
+        mask.style.display = 'block';
+        dialog.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+
+        var event = event || window.event;
+
+        if(event && event.stopPropagation ) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+
+        document.onclick = function(event) {
+            var event = event || window.event;
+
+            //event.target.id   chrome ff ie+9
+            //event.srcElement.id   ie
+
+            var targetId = event.target ? event.target.id : event.srcElement.id;
+
+            if(targetId != "dialog") {
+                mask.style.display = 'none';
+                dialog.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.onclick = null;
+            }
+            //alert("点击了空白处");
+        }
+
+    }
+
+
+
+
+
+</script>
+</html>
