@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+
+    <style>
+        ul li {
+            list-style: none;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        .all {
+            width: 500px;
+            height:200px;
+            border: 1px solid #E5E5E5;
+            margin: 100px auto 0 auto;
+            padding: 10px;
+        }
+
+        .screen {
+            width: auto;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #pic {
+            position: absolute;
+            top : 0;
+            left : 0px;
+            width: 3000px;
+        }
+        
+        #pic li {
+            float : left;
+        }
+
+        #seq {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #seq li {
+            float: left;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #888888;
+            margin-right: 5px;
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #seq .seqHover {
+            background-color: orange;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="all">
+        <div class="screen">
+            <ul id="pic">
+                <li><img src="images/taobao/1.jpg" width="500" height="200" /></li>
+                <li><img src="images/taobao/2.jpg" width="500" height="200" /></li>
+                <li><img src="images/taobao/3.jpg" width="500" height="200" /></li>
+                <li><img src="images/taobao/4.jpg" width="500" height="200" /></li>
+                <li><img src="images/taobao/5.jpg" width="500" height="200" /></li>
+            </ul>
+            <ol id="seq">
+                <!--<li class="seqHover">1</li>-->
+                <!--<li>2</li>-->
+                <!--<li>3</li>-->
+            </ol>
+        </div>
+    </div>
+</body>
+<script src="animation.js"></script>
+<script>
+
+    window.onload = function() {
+
+        var pics = document.getElementById("pic");
+
+        var picUl = document.getElementById("pic");
+
+        var picsLen = pics.children.length;
+
+        var olSeq = document.getElementById("seq");
+
+        //动态拷贝最后一张图片
+        pics.appendChild(pics.children[0].cloneNode(true));
+
+        for(var i=0; i<picsLen; i++) {
+            var currentLi = document.createElement("li");
+            currentLi.innerText = i + 1;
+            currentLi.setAttribute("data-index",i+1);
+            if (i == 0) {
+                currentLi.className = 'seqHover';
+            }
+
+            currentLi.onmouseover = function() {
+                var dataIndex = this.getAttribute("data-index") - 1;
+                //picUl.style.left =  - dataIndex * 500 + "px";
+                animation(picUl, - dataIndex * 500, 20);
+
+                for(var i=0; i<olSeq.children.length; i++) {
+                    olSeq.children[i].className = "";
+                }
+                this.className = "seqHover";
+
+                clearTimeout(autoTimer);
+
+            }
+
+            currentLi.onmouseout = function() {
+                var dataIndex = this.getAttribute("data-index") - 1;
+                key = seq = dataIndex;
+                autoTimer = setInterval(autoPlay,2000);
+            }
+
+            olSeq.appendChild(currentLi);
+        }
+
+
+        var key = 0;
+        var seq = 0;
+        var autoTimer = null;
+        function autoPlay() {
+            key++;
+            if(key == pics.children.length) {
+                picUl.style.left = "0px";
+                key = 1;
+            }
+            animation(picUl, - key * 500, 20);
+
+            for(var i=0; i<olSeq.children.length; i++) {
+                olSeq.children[i].className = "";
+            }
+            seq ++;
+            if(seq - olSeq.children.length >= 0) {
+                seq = 0;
+            }
+            olSeq.children[seq].className = "seqHover";
+        }
+
+
+
+        autoTimer = setInterval(autoPlay,2000);
+
+    }
+
+</script>
+</html>

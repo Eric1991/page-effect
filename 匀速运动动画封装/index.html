@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-
+    <script src="animation.js"></script>
     <button id="start">600</button>
     <button id="start2">800</button>
     <div id="box1"></div>
@@ -45,24 +45,7 @@
         }
 
 
-        function animation(obj,target,speed) {
-            obj.timer = setInterval(function(){
 
-                var speedDirection = target > parseInt(obj.style.left)  ?  speed : speed * -1;
-
-                obj.style.left = obj.offsetLeft +  speedDirection + "px";
-
-                var result = Math.abs(target - parseInt(obj.style.left));
-
-                if( result <= speed) {
-                    clearInterval(obj.timer);
-                    obj.style.left = target + "px";
-                }
-
-
-
-            },30);
-        }
 
     </script>
 
