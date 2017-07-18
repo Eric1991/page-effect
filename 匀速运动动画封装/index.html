@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匀速运动动画封装</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: pink;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: cadetblue;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="start">600</button>
+    <button id="start2">800</button>
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+    <script>
+        var box1 = document.getElementById("box1");
+
+        var box2 = document.getElementById("box2");
+
+        var startBtn = document.getElementById("start");
+        var startBtn2 = document.getElementById("start2");
+
+        startBtn.onclick = function() {
+             animation(box1,400,5);
+             animation(box2,600,10);
+        }
+
+        startBtn2.onclick = function() {
+            animation(box1,800,5);
+        }
+
+
+        function animation(obj,target,speed) {
+            obj.timer = setInterval(function(){
+
+                var speedDirection = target > parseInt(obj.style.left)  ?  speed : speed * -1;
+
+                obj.style.left = obj.offsetLeft +  speedDirection + "px";
+
+                var result = Math.abs(target - parseInt(obj.style.left));
+
+                if( result <= speed) {
+                    clearInterval(obj.timer);
+                    obj.style.left = target + "px";
+                }
+
+
+
+            },30);
+        }
+
+    </script>
+
+</body>
+</html>

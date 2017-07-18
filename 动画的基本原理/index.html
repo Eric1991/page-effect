@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画的基本原理</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始</button>
+    <div></div>
+</body>
+<script>
+    var start = document.getElementById("start");
+    var div = document.getElementsByTagName("div")[0];
+    start.onclick = function() {
+        var timer = setInterval(function(){
+            div.style.left = div.offsetLeft + 10 + "px";
+            if(parseInt(div.style.left) > 400) {
+                clearInterval(timer);
+            }
+        },30);
+
+    }
+</script>
+</html>
