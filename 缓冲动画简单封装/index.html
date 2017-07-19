@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓冲动画简单封装</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn200">200</button>
+    <button id="btn400">400</button>
+    <div id="box"></div>
+
+</body>
+<script>
+    var btn200 = document.getElementById("btn200");
+    var btn400 = document.getElementById("btn400");
+    var box = document.getElementById("box");
+
+    btn200.onclick = function() {
+        animation(box,200);
+    }
+
+    btn400.onclick = function() {
+        animation(box,400);
+    }
+
+    function animation(obj, target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+            obj.style.left =  obj.offsetLeft  + step + "px";
+
+            if(target == obj.offsetLeft) {
+                clearInterval(obj.timer);
+            }
+
+        },30);
+    }
+
+</script>
+</html>
