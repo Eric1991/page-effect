@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="" />
     <ignored path="page-effect.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -75,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/缓冲动画简单封装/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -85,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="animation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/轮播图/animation.js">
+      <file leaf-file-name="返回css写法兼容函数.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/访问css属性值兼容函数/返回css写法兼容函数.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,6 +159,7 @@
         <option value="$PROJECT_DIR$/轮播图/index.html" />
         <option value="$PROJECT_DIR$/缓冲动画原理/index.html" />
         <option value="$PROJECT_DIR$/缓冲动画简单封装/index.html" />
+        <option value="$PROJECT_DIR$/访问css属性值兼容函数/返回css写法兼容函数.html" />
       </list>
     </option>
   </component>
@@ -215,6 +214,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="page-effect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page-effect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page-effect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="访问css属性值兼容函数" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,12 +356,12 @@
       <workItem from="1500336736111" duration="297000" />
       <workItem from="1500379112386" duration="8497000" />
       <workItem from="1500453723460" duration="371000" />
-      <workItem from="1500469180774" duration="1747000" />
+      <workItem from="1500469180774" duration="2663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26616000" />
+    <option name="totallyTimeSpent" value="27532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1387" height="877" extended-state="0" />
@@ -406,13 +419,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/水平滚动条拖动/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/点击空白处关闭原理/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -755,6 +761,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/访问css属性值兼容函数/返回css写法兼容函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
