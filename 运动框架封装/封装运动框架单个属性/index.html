@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            top:30px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeWidth">改变宽度</button>
+    <button id="down">向下运动400px</button>
+    <button id="right">向右运动400px</button>
+
+
+
+    <div id="box"></div>
+</body>
+
+
+
+
+<script>
+
+    var changeWidth = document.getElementById("changeWidth");
+    var down = document.getElementById("down");
+    var right = document.getElementById("right");
+    var box = document.getElementById("box");
+
+    changeWidth.onclick = function() {
+        animation(box,"width",400);
+    }
+
+    down.onclick = function() {
+        animation(box,"top",400);
+    }
+
+    right.onclick = function() {
+        animation(box,"left",600);
+    }
+
+    function animation(obj,attr,target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+                var current = parseInt(getStyle(obj,attr));
+                var step = (target - current) / 10;
+                step = step > 0 ?  Math.ceil(step) : Math.floor(step);
+                obj.style[attr] = current + step + "px";
+        },30);
+    }
+
+
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            return obj.currentStyle[attr];
+        } else {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+</script>
+</html>
