@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="" />
+    <list default="true" id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html" afterPath="$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html" />
+    </list>
     <ignored path="page-effect.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -53,17 +55,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="69" column="5" selection-start-line="36" selection-start-column="0" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="425">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/运动框架封装/防360开机效果/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -155,8 +157,8 @@
         <option value="$PROJECT_DIR$/缓冲动画简单封装/index.html" />
         <option value="$PROJECT_DIR$/访问css属性值兼容函数/返回css写法兼容函数.html" />
         <option value="$PROJECT_DIR$/运动框架封装/封装运动框架单个属性/index.html" />
-        <option value="$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html" />
         <option value="$PROJECT_DIR$/运动框架封装/防360开机效果/index.html" />
+        <option value="$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html" />
       </list>
     </option>
   </component>
@@ -477,12 +479,12 @@
       <workItem from="1500379112386" duration="8497000" />
       <workItem from="1500453723460" duration="371000" />
       <workItem from="1500469180774" duration="2740000" />
-      <workItem from="1500551103748" duration="4560000" />
+      <workItem from="1500551103748" duration="6228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32169000" />
+    <option name="totallyTimeSpent" value="33837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1387" height="877" extended-state="6" />
@@ -877,18 +879,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="69" column="5" selection-start-line="36" selection-start-column="0" selection-end-line="69" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/运动框架封装/防360开机效果/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/运动框架封装/封装运动框架多个属性/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>

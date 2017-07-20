@@ -11,6 +11,7 @@
             position: absolute;
             top:30px;
             left: 20px;
+
         }
     </style>
 </head>
@@ -31,20 +32,35 @@
 
 
     start.onclick = function() {
-        animation(box,{width:400,height:300,left:500,top:200});
+        animation(box,{width:400,height:300,left:500,top:200,zIndex:4,opacity:40});
     }
 
 
-    function animation(obj,target) {
+    function animation(obj,target,fn) {
         clearInterval(obj.timer);
         obj.timer = setInterval(function(){
             var flag = true;
                 for(var attr in target) {
+                    var current = 0;
+                    if(attr == "opacity") {
+                        current = parseInt(getStyle(obj,attr) * 100);
+                        console.log("current..." + current);
+                    } else {
+                        current = parseInt(getStyle(obj,attr));
+                    }
 
-                    var current = parseInt(getStyle(obj,attr));
+
                     var step = (target[attr] - current) / 10;
                     step = step > 0 ?  Math.ceil(step) : Math.floor(step);
-                    obj.style[attr] = current + step + "px";
+
+                    if(attr == "opacity") {
+                        console.log("result.." + (current + step) / 100);
+                        obj.style.opacity = (current + step) / 100;
+                    } else if(attr == "zIndex") {
+                        obj.style.zIndex = target[attr];
+                    } else {
+                        obj.style[attr] = current + step + "px";
+                    }
 
                     if(target[attr] !=  current ) {
 
@@ -55,6 +71,7 @@
                 if(flag) {
                     console.log("stop");
                     clearInterval(obj.timer);
+                    fn && fn();
                 }
 
         },30);
