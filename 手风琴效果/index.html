@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,li {
+            list-style: none;
+        }
+
+        .box {
+            width: 1200px;
+            height:460px;
+            background-color: chocolate;
+            margin: 100px auto;
+        }
+
+        ul {
+            width: auto;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            width: 200px;
+            height: 100%;
+            border: 0px solid #888888;
+            background-color: antiquewhite;
+        }
+
+        .big {
+            width: 800px;
+        }
+
+        .small {
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="">
+                <img src="images/1.jpg" alt="">
+            </li>
+            <li class="">
+                <img src="images/2.jpg" alt="">
+            </li>
+            <li class="">
+                <img src="images/3.jpg" alt="">
+            </li>
+            <li class="">
+                <img src="images/4.jpg" alt="">
+            </li>
+            <li class="">
+                <img src="images/5.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="animation.js"></script>
+
+<script>
+    window.onload = function() {
+        var lis  = document.getElementsByTagName("li");
+        for(var i=0; i<lis.length ;i++) {
+            lis[i].onmouseover = function() {
+                var _that = this;
+                for(var j=0; j<lis.length; j++) {
+                    animation(lis[j],{width:100});
+                }
+                animation(this,{width:800});
+            }
+            lis[i].onmouseout = function() {
+                console.log("aaa");
+                for(var i=0;i<lis.length; i++) {
+                    animation(lis[i],{width:240});
+                }
+
+            }
+        }
+    }
+</script>
+
+</html>
