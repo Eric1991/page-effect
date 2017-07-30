@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/marker/CSS3/CSS3笔记.doc" afterPath="$PROJECT_DIR$/marker/CSS3/day1/CSS3笔记.doc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="page-effect.iws" />
@@ -39,7 +38,7 @@
       <file leaf-file-name="slider.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/仿网易轮播图/js/slider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="731">
               <caret line="45" column="25" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc;n#$#0" expanded="false" />
@@ -207,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,14 +241,11 @@
               <option name="myItemId" value="CSS3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,16 +259,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/marker/CSS3/day1" />
-      <recent name="$PROJECT_DIR$/marker/CSS3" />
-      <recent name="$PROJECT_DIR$/仿网易轮播图/js" />
-      <recent name="$PROJECT_DIR$/仿网易轮播图/images" />
-      <recent name="$PROJECT_DIR$/手风琴效果" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/marker/CSS3/day1" />
       <recent name="$PROJECT_DIR$/运动框架封装" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/marker/CSS3/day3" />
+      <recent name="$PROJECT_DIR$/marker/CSS3/day2" />
+      <recent name="$PROJECT_DIR$/marker/CSS3/day1" />
+      <recent name="$PROJECT_DIR$/marker/CSS3" />
+      <recent name="$PROJECT_DIR$/仿网易轮播图/js" />
     </key>
   </component>
   <component name="RunManager">
@@ -334,6 +329,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="38e8d6c5-6cd8-488c-aa94-616b75c34c7d" name="Default" comment="" />
@@ -353,15 +351,16 @@
       <workItem from="1500551103748" duration="8172000" />
       <workItem from="1500988309961" duration="7391000" />
       <workItem from="1501171772666" duration="561000" />
-      <workItem from="1501317011101" duration="117000" />
+      <workItem from="1501317011101" duration="238000" />
+      <workItem from="1501396418253" duration="99000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43850000" />
+    <option name="totallyTimeSpent" value="44070000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1387" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1387" height="877" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25256222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -680,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +741,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/仿网易轮播图/js/slider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="731">
           <caret line="45" column="25" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc;n#$#0" expanded="false" />
